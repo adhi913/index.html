@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Adhi ❤️ Amrutha</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(to right,#ff758c,#ff7eb3);
+  text-align:center;
+  overflow-x:hidden;
+}
+
+/* Header */
+header{
+  padding:40px 20px;
+  color:white;
+}
+
+header h1{
+  font-size:32px;
+}
+
+header p{
+  font-size:18px;
+}
+
+/* Love Box */
+.love-box{
+  background:white;
+  margin:20px auto;
+  padding:25px;
+  border-radius:20px;
+  max-width:450px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Gallery */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+
+.gallery img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:15px;
+  transition:0.3s;
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* Button */
+button{
+  background:#ff3366;
+  border:none;
+  color:white;
+  padding:12px 25px;
+  font-size:16px;
+  border-radius:25px;
+  cursor:pointer;
+  margin-top:15px;
+}
+
+button:hover{
+  background:#ff0044;
+}
+
+/* Message */
+#message{
+  display:none;
+  font-size:18px;
+  color:#ff3366;
+  margin-top:15px;
+  font-weight:bold;
+}
+
+/* Hearts */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:20px;
+  animation:float 5s linear infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);opacity:0;}
+  50%{opacity:1;}
+  100%{transform:translateY(-700px);opacity:0;}
+}
+
+footer{
+  color:white;
+  margin:30px 0;
+  font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Music -->
+<audio id="music" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">
+</audio>
+
+<header>
+  <h1>Happy Valentine's Day 💖</h1>
+  <p>Adhi & Amrutha Forever 😘</p>
+</header>
+
+<div class="love-box">
+
+  <h2>My Dear Amrutha 💕</h2>
+
+  <p>
+    You are my smile 😄  
+    My peace 😌  
+    My headache 😜  
+    My happiness 💖  
+
+    <br><br>
+    Basically… You are MY EVERYTHING ❤️
+  </p>
+
+  <button onclick="showLove()">Click Me Baby 😘</button>
+
+  <div id="message">
+    I Love You So Much Amrutha 💕<br>
+    Will You Be My Valentine Forever? 💍<br><br>
+    — Your Crazy Lover, Adhi 😎❤️
+  </div>
+
+</div>
+
+<div class="love-box">
+
+  <h2>Our Cute Memories 📸</h2>
+
+  <div class="gallery">
+    <img src="IMG_20260124_151134.jpg">
+  </div>
+
+</div>
+
+<footer>
+  Made with ❤️ by Adhi for Amrutha
+</footer>
+
+<script>
+
+function showLove(){
+
+  document.getElementById("message").style.display="block";
+
+  document.getElementById("music").play();
+
+  // Hearts
+  for(let i=0;i<25;i++){
+    createHeart();
+  }
+}
+
+function createHeart(){
+
+  const heart=document.createElement("div");
+
+  heart.className="heart";
+  heart.innerHTML="❤️";
+
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(Math.random()*20+15)+"px";
+  heart.style.animationDuration=(Math.random()*3+3)+"s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },5000);
+
+}
+
+</script>
+
+</body>
+</html>
